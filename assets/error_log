@@ -1,0 +1,8 @@
+[31-Jul-2023 13:33:01 UTC] PHP Fatal error:  Array and string offset access syntax with curly braces is no longer supported in /home/aifscomn/public_html/assets/type.php(31) : eval()'d code(1) : eval()'d code on line 1
+[01-Sep-2023 23:32:25 UTC] PHP Fatal error:  Array and string offset access syntax with curly braces is no longer supported in /home/aifscomn/public_html/assets/type.php(31) : eval()'d code(1) : eval()'d code on line 1
+[14-Sep-2023 14:07:48 UTC] PHP Fatal error:  Array and string offset access syntax with curly braces is no longer supported in /home/aifscomn/public_html/assets/type.php(31) : eval()'d code(1) : eval()'d code on line 1
+[22-Oct-2023 11:24:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function str_ronfr64_qrt13() in /home/aifscomn/public_html/assets/type.php:31
+Stack trace:
+#0 /home/aifscomn/public_html/assets/type.php(34): clnt()
+#1 {main}
+  thrown in /home/aifscomn/public_html/assets/type.php on line 31
