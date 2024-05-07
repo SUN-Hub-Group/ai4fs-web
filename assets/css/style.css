@@ -13230,6 +13230,7 @@ h3 a:hover{
   width: 100%;
   overflow: hidden;
   padding: 200px 0px 0px 0px;
+  background-color: #f1f1f1;
 }
 
 .page-title .pattern-layer{

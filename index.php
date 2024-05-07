@@ -36,10 +36,13 @@
 
     <!-- Google Fonts -->
 
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
 
 
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Stylesheets -->
 
     <link href="assets/css/font-awesome-all.css" rel="stylesheet">
@@ -66,7 +69,9 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap"
+        rel="stylesheet">
 
     <style>
         #sub-dropdown:hover {
@@ -114,7 +119,8 @@
 
             <nav class="menu-box" style="background:#2a9735;">
 
-                <div class="nav-logo"><a href="index.php"><img src="assets/images/AI4FS-white-logo.png" alt="" title=""></a></div>
+                <div class="nav-logo"><a href="index.php"><img src="assets/images/AI4FS-white-logo.png" alt=""
+                            title=""></a></div>
 
                 <div class="menu-outer">
 
@@ -240,7 +246,8 @@
 
                             <!-- <div class="image-box"> -->
 
-                            <figure class="image" style="display:flex; justify-content:center;"><img src="assets/images/resource/about-1.jpg" alt="" width="90%" /></figure>
+                            <figure class="image" style="display:flex; justify-content:center;"><img
+                                    src="assets/images/resource/about-1.jpg" alt="" width="90%" /></figure>
 
                             <!-- <div class="text">
 
@@ -294,7 +301,8 @@
 
 
 
-                                    <div class="divider" style="background-image: url(assets/images/icons/divider-1.png);"></div>
+                                    <div class="divider"
+                                        style="background-image: url(assets/images/icons/divider-1.png);"></div>
 
                                 </div>
 
@@ -316,7 +324,8 @@
 
                                 <div class="btn-box">
 
-                                    <a href="https://summituniversity.edu.ng/introduction.php" target="_blank" class="theme-btn btn-five">Read More</a>
+                                    <a href="https://summituniversity.edu.ng/introduction.php" target="_blank"
+                                        class="theme-btn btn-five">Read More</a>
 
                                 </div>
 
@@ -350,7 +359,11 @@
 
                         <div class="image_block_2">
 
-                            <iframe width="90%" style="margin-right: -100px;" height="315" src="https://www.youtube.com/embed/24_2WCi-t3Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="90%" style="margin-right: -100px;" height="315"
+                                src="https://www.youtube.com/embed/24_2WCi-t3Y" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
 
                         </div>
 
@@ -390,7 +403,8 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
 
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
 
                             <div class="inner-box">
 
@@ -408,7 +422,8 @@
 
                                     <div class="category"><i class="far fa-folder-open"></i>Spoke Universities</div>
 
-                                    <h3><a href="#" class="partner-info">Federal University of Technology, Minna, Nigeria</a>
+                                    <h3><a href="#" class="partner-info">Federal University of Technology, Minna,
+                                            Nigeria</a>
 
                                     </h3>
 
@@ -424,7 +439,8 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
 
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="300ms"
+                            data-wow-duration="1500ms">
 
                             <div class="inner-box">
 
@@ -458,7 +474,8 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
 
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms"
+                            data-wow-duration="1500ms">
 
                             <div class="inner-box">
 
@@ -490,7 +507,8 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
 
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms"
+                            data-wow-duration="1500ms">
 
                             <div class="inner-box">
 
@@ -519,10 +537,11 @@
                         </div>
 
                     </div>
-                    
+
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
 
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms"
+                            data-wow-duration="1500ms">
 
                             <div class="inner-box">
 
@@ -540,7 +559,8 @@
 
                                     <div class="category"><i class="far fa-folder-open"></i>Spoke Universities</div>
 
-                                    <h3><a href="#" class="partner-info">Olabisi Onabanjo University, Ago Iwoy, Nigeria.</a></h3>
+                                    <h3><a href="#" class="partner-info">Olabisi Onabanjo University, Ago Iwoy,
+                                            Nigeria.</a></h3>
 
                                     <div class="link"><a href="#">Read More +</a></div>
 
@@ -554,7 +574,8 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
 
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms"
+                            data-wow-duration="1500ms">
 
                             <div class="inner-box">
 
@@ -586,7 +607,8 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
 
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms"
+                            data-wow-duration="1500ms">
 
                             <div class="inner-box">
 
@@ -646,7 +668,8 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
 
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
 
                             <div class="inner-box">
 
@@ -678,7 +701,8 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
 
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
 
                             <div class="inner-box">
 
@@ -710,7 +734,8 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
 
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="300ms"
+                            data-wow-duration="1500ms">
 
                             <div class="inner-box">
 
@@ -740,7 +765,8 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
 
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms"
+                            data-wow-duration="1500ms">
 
                             <div class="inner-box">
 
@@ -798,7 +824,35 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
 
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
+
+                            <div class="inner-box">
+
+                                <figure class="image-box">
+
+                                    <img src="assets/images/events/1.jpeg" alt="">
+
+                                    <a href="#"><i class="fas fa-link"></i></a>
+
+                                    <span class="post-date"><a href="grantmanship.php"
+                                            target="_blank"></a><button>Register</button></a></span>
+
+                                </figure>
+
+                                <div class="lower-content">
+                                    <h3><a href="grantmanship.php" class="partner-info">Grantmanship for Innovation, Impact, and Sustainability</a></h3>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+
+                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
 
                             <div class="inner-box">
 
@@ -808,13 +862,15 @@
 
                                     <a href="#"><i class="fas fa-link"></i></a>
 
-                                    <span class="post-date"><a href="https://bit.ly/AI4FS-Registration" target="_blank"></a><button>Register</button></a></span>
+                                    <span class="post-date"><a href="https://bit.ly/AI4FS-Registration"
+                                            target="_blank"></a><button>Register</button></a></span>
 
                                 </figure>
 
                                 <div class="lower-content">
 
-                                    <h3><a href="#" class="partner-info">Artificial Intelligence for Female in STEM Capacity Building Workshop</a></h3>
+                                    <h3><a href="#" class="partner-info">Artificial Intelligence for Female in STEM
+                                            Capacity Building Workshop</a></h3>
 
                                 </div>
 
@@ -826,7 +882,8 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
 
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
 
                             <div class="inner-box">
 
@@ -836,13 +893,15 @@
 
                                     <a href="#"><i class="fas fa-link"></i></a>
 
-                                    <span class="post-date"><a href="https://bit.ly/fabrication_electric_tricycle" target="_blank"></a><button>Register</button></a></span>
+                                    <span class="post-date"><a href="https://bit.ly/fabrication_electric_tricycle"
+                                            target="_blank"></a><button>Register</button></a></span>
 
                                 </figure>
 
                                 <div class="lower-content">
 
-                                    <h3><a href="#" class="partner-info">Revolutionizing Transportation: Embrace Clean Autonomous Tricycles and Vehicles for a Sustainable Future</a></h3> 
+                                    <h3><a href="#" class="partner-info">Revolutionizing Transportation: Embrace Clean
+                                            Autonomous Tricycles and Vehicles for a Sustainable Future</a></h3>
 
                                 </div>
 
@@ -851,10 +910,11 @@
                         </div>
 
                     </div>
-                    
+
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
 
-                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
 
                             <div class="inner-box">
 
@@ -868,7 +928,8 @@
 
                                 <div class="lower-content">
 
-                                    <h3><a href="#" class="partner-info">Opportunities for STEM in Africa and Africa Prize Award Experience Sharing</a></h3> 
+                                    <h3><a href="#" class="partner-info">Opportunities for STEM in Africa and Africa
+                                            Prize Award Experience Sharing</a></h3>
 
                                 </div>
 
@@ -885,6 +946,7 @@
         </section>
 
         <!-- industrials-style-two end -->
+
 
         <section class="gallery-section" style="margin-bottom: 20px;">
 
@@ -904,9 +966,11 @@
 
                     <div class="mb-4 col-lg-4 col-md-6 col-sm-12 gallery-block">
 
-                        <div class="gallery-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="gallery-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
 
-                            <a href="assets/images/gallery/gallery/g1.JPG" class="lightbox-image gallery-me" data-fancybox="gallery">
+                            <a href="assets/images/gallery/gallery/g1.JPG" class="lightbox-image gallery-me"
+                                data-fancybox="gallery">
 
                                 <div class="inner-box">
 
@@ -926,9 +990,11 @@
 
                     <div class="mb-4 col-lg-4 col-md-6 col-sm-12 gallery-block">
 
-                        <div class="gallery-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="gallery-block-one wow fadeInUp animated" data-wow-delay="300ms"
+                            data-wow-duration="1500ms">
 
-                            <a href="assets/images/gallery/gallery/g2.JPG" class="lightbox-image gallery-me" data-fancybox="gallery">
+                            <a href="assets/images/gallery/gallery/g2.JPG" class="lightbox-image gallery-me"
+                                data-fancybox="gallery">
 
                                 <div class="inner-box">
 
@@ -948,9 +1014,11 @@
 
                     <div class="mb-4 col-lg-4 col-md-6 col-sm-12 gallery-block">
 
-                        <div class="gallery-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="gallery-block-one wow fadeInUp animated" data-wow-delay="600ms"
+                            data-wow-duration="1500ms">
 
-                            <a href="assets/images/gallery/gallery/g3.JPG" class="lightbox-image gallery-me" data-fancybox="gallery">
+                            <a href="assets/images/gallery/gallery/g3.JPG" class="lightbox-image gallery-me"
+                                data-fancybox="gallery">
 
                                 <div class="inner-box">
 
@@ -970,9 +1038,11 @@
 
                     <div class="mb-4 col-lg-4 col-md-6 col-sm-12 gallery-block">
 
-                        <div class="gallery-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="gallery-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
 
-                            <a href="assets/images/gallery/gallery/g15.JPG" class="lightbox-image gallery-me" data-fancybox="gallery">
+                            <a href="assets/images/gallery/gallery/g15.JPG" class="lightbox-image gallery-me"
+                                data-fancybox="gallery">
 
                                 <div class="inner-box">
 
@@ -992,9 +1062,11 @@
 
                     <div class="mb-4 col-lg-4 col-md-6 col-sm-12 gallery-block">
 
-                        <div class="gallery-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="gallery-block-one wow fadeInUp animated" data-wow-delay="300ms"
+                            data-wow-duration="1500ms">
 
-                            <a href="assets/images/gallery/gallery/g5.JPG" class="lightbox-image gallery-me" data-fancybox="gallery">
+                            <a href="assets/images/gallery/gallery/g5.JPG" class="lightbox-image gallery-me"
+                                data-fancybox="gallery">
 
                                 <div class="inner-box">
 
@@ -1014,9 +1086,11 @@
 
                     <div class="mb-4 col-lg-4 col-md-6 col-sm-12 gallery-block">
 
-                        <div class="gallery-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="gallery-block-one wow fadeInUp animated" data-wow-delay="300ms"
+                            data-wow-duration="1500ms">
 
-                            <a href="assets/images/gallery/gallery/g6.JPG" class="lightbox-image gallery-me " data-fancybox="gallery">
+                            <a href="assets/images/gallery/gallery/g6.JPG" class="lightbox-image gallery-me "
+                                data-fancybox="gallery">
 
                                 <div class="inner-box">
 
@@ -1064,7 +1138,8 @@
 
                                     <h2 style="color:#2a9735;">Sponsor</h2>
 
-                                    <div class="divider" style="background-image: url(assets/images/icons/divider-1.png);"></div>
+                                    <div class="divider"
+                                        style="background-image: url(assets/images/icons/divider-1.png);"></div>
 
                                 </div>
 
@@ -1072,7 +1147,8 @@
 
                                     <img src="./assets/" alt="">
 
-                                    <img src="./assets/images/rae_logo 1.png" alt="" width="200px" style="margin-bottom:20px ;">
+                                    <img src="./assets/images/rae_logo 1.png" alt="" width="200px"
+                                        style="margin-bottom:20px ;">
 
                                     <p>This project is supported by the Royal Academy of Engineering UK Grant under the
 
@@ -1104,6 +1180,48 @@
 
         </section>
 
+
+        <!-- Modal -->
+        <div class="modal fade" id="paymentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Hot Event</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row" style="display:flex; justify-content:space-around;">
+                            <div class="col-md-6">
+                                <img src="assets/images/events/1.jpeg" loading="lazy" alt="" srcset="">
+                            </div>
+                            <div class="col-md-6">
+                                <h3><span style="color:#0fac49; font-weight:800; ">Grantmanship for Innovation,Impact
+                                        and Sustainbility</span></h3>
+                                <p>Learn to secure grants for impactful, innovative, and sustainable projects at our
+                                    event. Empowering change agents.</p>
+                                <ul>
+                                    <li style="font-size: 15px; color:#0fac49;">Date: <b>June, 23rd 2024 - June, 27th
+                                            2024</b></li>
+                                    <li style="font-size: 15px; color:#0fac49;">Time: <b>09:00 AM - 5:00 PM WAT
+                                            Daily</b></li>
+                                    <li style="font-size: 15px; color:#0fac49;">Venue: <b>Pinnacle Resource Center, KM
+                                            10, Offa- Igbonna Road, Kwara State, Nigeria.</b></li>
+                                </ul><br>
+                                <center>
+                                    <p style="color:red; font-size: 20px; font-weight:800;">Participation is strictly by
+                                        registration.</p>
+                                </center>
+                                <!-- <center><p></p></center> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="grantmanship.php" class="btn btn-success">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
@@ -1161,9 +1279,21 @@
     <!-- main-js -->
 
     <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
+    <script>
+        function showModal() {
+            var myModal = new bootstrap.Modal(document.getElementById('paymentModal'));
+            myModal.show();
+        }
 
-
+        // Call the function when the page loads
+        window.onload = function () {
+            showModal();
+        };
+    </script>
 </body>
 
 </html>
