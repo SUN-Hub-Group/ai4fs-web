@@ -50,8 +50,7 @@ if (isset($_POST["make_payment"])) {
                 }
             }
         }
-
-        if (!in_array(0, $paymeny_exit)) {
+        if($total_amount == 0) {
             echo '<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
@@ -62,65 +61,16 @@ if (isset($_POST["make_payment"])) {
                                                                     </a>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <strong>Name:</strong> <input readonly style="pointer-events: none; border: none; color: green; width: 400px;" class="no-border" type="text"  value="' . $fullName . '" id="name" ><br>
-                                                                    <strong>Transaction Reference:</strong> <input readonly style="pointer-events: none; border: none; color: green;" class="no-border" type="text"  value="' . $payment_reference . '" id="reference"><br>
-                                                                    <strong>Amount Total (₦):</strong> <input style="pointer-events: none; border: none; color: green;" value="' . intval($total_amount) + 300 . '" class="no-border" type="text" id="amount">
-                                                                    
-                                                                    <input type="hidden" id="email" value="' . $email . '">
-                                                                    <input type="hidden" id="name" value="' . $fullName . '">
-                                                                    <br>Also note that N300 will be charged from your account for the payment gateway (PAYSTACK). There are different cards options you can choose. Go ahead and make payment for <strong>Grantmanship for Innovation, Impact, and Sustainability</strong> Workshop<br>
+                                                                    <br> Please select a payment option to continue. Workshop materials and participation are required for all attendees."<br>
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <a href="" class="btn btn-success" data-dismiss="modal"> Close </a>
-                                                                    <script src="https://js.paystack.co/v1/inline.js"></script>
-                                                                    
-                                                                    <button  class="btn btn-outline-success" onclick="payWithPaystack()">Process to payment</button>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>';
         } else {
-            echo '<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLongTitle">Payment confirmation</h5>
-                                                                    <a href="" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <br> Oops! It seems like you have already registered and made a payment for the selected category. If you will like to make a payment for another category, please choose <b>only</b> the category you have not paid for yet."<br>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <a href="" class="btn btn-success" data-dismiss="modal"> Close </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>';
-        }
-
-    } else {
-        $insert_user = "INSERT INTO registrations (`name`, `email`, `phone`) VALUE ('$fullName', '$email', '$phoneNumber')";
-        $user_query = mysqli_query($link, $insert_user);
-
-        if ($user_query) {
-
-            foreach ($_POST as $key => $value) {
-                if ($key === "make_payment" or $key === "email" or $key === "fullName" or $key === "phoneNumber") {
-                    continue;
-                } else {
-                    $payment_reference = generatePaymentID();
-                    $payment_purpose = htmlspecialchars($key);
-                    $payment_value = intval($value);
-                    $total_amount += $payment_value;
-
-                    $insert_payment_db = "INSERT INTO payments (email, payment_purpose, amount, reference, status) VALUES ('$email', '$payment_purpose', '$payment_value', '$payment_reference', '0')";
-                    $paymeny_query = mysqli_query($link, $insert_payment_db);
-                }
-            }
-
-            if ($paymeny_query) {
+            if (!in_array(0, $paymeny_exit)) {
                 echo '<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
@@ -148,6 +98,96 @@ if (isset($_POST["make_payment"])) {
                                                             </div>
                                                         </div>
                                                     </div>';
+            } else {
+                echo '<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLongTitle">Payment confirmation</h5>
+                                                                    <a href="" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <br> Oops! It seems like you have already registered and made a payment for the selected category. If you will like to make a payment for another category, please choose <b>only</b> the category you have not paid for yet."<br>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <a href="" class="btn btn-success" data-dismiss="modal"> Close </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>';
+            }
+        }
+
+    } else {
+        $insert_user = "INSERT INTO registrations (`name`, `email`, `phone`) VALUE ('$fullName', '$email', '$phoneNumber')";
+        $user_query = mysqli_query($link, $insert_user);
+
+        if ($user_query) {
+
+            foreach ($_POST as $key => $value) {
+                if ($key === "make_payment" or $key === "email" or $key === "fullName" or $key === "phoneNumber") {
+                    continue;
+                } else {
+                    $payment_reference = generatePaymentID();
+                    $payment_purpose = htmlspecialchars($key);
+                    $payment_value = intval($value);
+                    $total_amount += $payment_value;
+
+                    $insert_payment_db = "INSERT INTO payments (email, payment_purpose, amount, reference, status) VALUES ('$email', '$payment_purpose', '$payment_value', '$payment_reference', '0')";
+                    $paymeny_query = mysqli_query($link, $insert_payment_db);
+                }
+            }
+            if ($total_amount == 0) {
+                echo '<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLongTitle">Payment confirmation</h5>
+                                                                    <a href="" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <br> Please select a payment option to continue. Workshop materials and participation are required for all attendees"<br>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <a href="" class="btn btn-success" data-dismiss="modal"> Close </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>';
+            } else {
+                if ($paymeny_query) {
+                    echo '<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLongTitle">Payment confirmation</h5>
+                                                                    <a href="" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <strong>Name:</strong> <input readonly style="pointer-events: none; border: none; color: green; width: 400px;" class="no-border" type="text"  value="' . $fullName . '" id="name" ><br>
+                                                                    <strong>Transaction Reference:</strong> <input readonly style="pointer-events: none; border: none; color: green;" class="no-border" type="text"  value="' . $payment_reference . '" id="reference"><br>
+                                                                    <strong>Amount Total (₦):</strong> <input style="pointer-events: none; border: none; color: green;" value="' . intval($total_amount) + 300 . '" class="no-border" type="text" id="amount">
+                                                                    
+                                                                    <input type="hidden" id="email" value="' . $email . '">
+                                                                    <input type="hidden" id="name" value="' . $fullName . '">
+                                                                    <br>Also note that N300 will be charged from your account for the payment gateway (PAYSTACK). There are different cards options you can choose. Go ahead and make payment for <strong>Grantmanship for Innovation, Impact, and Sustainability</strong> Workshop<br>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <a href="" class="btn btn-success" data-dismiss="modal"> Close </a>
+                                                                    <script src="https://js.paystack.co/v1/inline.js"></script>
+                                                                    
+                                                                    <button  class="btn btn-outline-success" onclick="payWithPaystack()">Process to payment</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>';
+                }
             }
         }
     }
