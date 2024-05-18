@@ -1,10 +1,17 @@
 <?php
 // $dbconnect = mysqli_connect('localhost', 'aifscomn_ai4fs', 'ai4fs__@@2023', 'aifscomn_ai4fs');
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
 $link = mysqli_connect('localhost', 'root', '', 'aifscomn_ai4fs');
 
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
+
+$waver_mail_acommodation_feeding = ['tesleemolamilekan902@gmail.com'];
+$waver_mail = ['tesleemolamilekan902'];
 
 function generatePaymentID($prefix = 'AI4FS')
 {
@@ -38,6 +45,14 @@ if (isset($_POST["make_payment"])) {
                 $payment_value = intval($value);
                 $total_amount += $payment_value;
 
+                if(in_array($email, $waver_mail_acommodation_feeding)){
+                    $total_amount = 250000;
+                    $msg_waver = "We have waived the accommodation fee and feeding fee from your payment.";
+                }else{
+                    $total_amount = $total_amount;
+                    $msg_waver = "";
+                }
+
                 $paymentExistsQuery = mysqli_query($link, "SELECT COUNT(*) FROM payments WHERE payment_purpose = '$payment_purpose' AND status = 1");
                 $paymentExists = mysqli_fetch_array($paymentExistsQuery)[0];
 
@@ -50,7 +65,7 @@ if (isset($_POST["make_payment"])) {
                 }
             }
         }
-        if($total_amount == 0) {
+        if ($total_amount == 0) {
             echo '<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
@@ -84,7 +99,7 @@ if (isset($_POST["make_payment"])) {
                                                                     <strong>Name:</strong> <input readonly style="pointer-events: none; border: none; color: green; width: 400px;" class="no-border" type="text"  value="' . $fullName . '" id="name" ><br>
                                                                     <strong>Transaction Reference:</strong> <input readonly style="pointer-events: none; border: none; color: green;" class="no-border" type="text"  value="' . $payment_reference . '" id="reference"><br>
                                                                     <strong>Amount Total (₦):</strong> <input style="pointer-events: none; border: none; color: green;" value="' . intval($total_amount) + 300 . '" class="no-border" type="text" id="amount">
-                                                                    
+                                                                    <p>'. $msg_waver.'</p>
                                                                     <input type="hidden" id="email" value="' . $email . '">
                                                                     <input type="hidden" id="name" value="' . $fullName . '">
                                                                     <br>Also note that N300 will be charged from your account for the payment gateway (PAYSTACK). There are different cards options you can choose. Go ahead and make payment for <strong>Grantmanship for Innovation, Impact, and Sustainability</strong> Workshop<br>
@@ -109,7 +124,7 @@ if (isset($_POST["make_payment"])) {
                                                                     </a>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <br> Oops! It seems like you have already registered and made a payment for the selected category. If you will like to make a payment for another category, please choose <b>only</b> the category you have not paid for yet."<br>
+                                                                    <center><b style="color:green; font: size 30px;">Oops!</b></center> <br> It seems like you have already registered and made a payment for the selected category. Please contact support if you have any complaints."<br>
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <a href="" class="btn btn-success" data-dismiss="modal"> Close </a>
@@ -211,19 +226,61 @@ function verify_payment($ref)
     $request = curl_exec($ch);
     //close connection
     curl_close($ch);
+
     //declare an array that will contain the result 
     $result = array();
     if ($request) {
         $result = json_decode($request, true);
     } else {
         return 0;
-
-        exit();
     }
-    if (!empty($result['data']['status']) and $result['data']['status'] == 'success') {
-        $query = mysqli_query($link, "UPDATE payments SET status = 1 WHERE reference = '$ref' ");
+
+    if (!empty($result['data']['status']) && $result['data']['status'] == 'success') {
+        $query = mysqli_query($link, "UPDATE payments SET status = 1 WHERE reference = '" . mysqli_real_escape_string($link, $ref) . "'");
         if ($query) {
-            return 1;
+            // Fetch email associated with the payment
+            $emailQuery = mysqli_query($link, "SELECT registrations.email, registrations.name, payments.amount FROM payments INNER JOIN registrations ON registrations.email = payments.email WHERE reference = '" . mysqli_real_escape_string($link, $ref) . "' AND status = 1");
+            $emailResult = mysqli_fetch_assoc($emailQuery);
+            $email = $emailResult['email'];
+            $name = $emailResult['name'];
+            $amount = $emailResult['amount'];
+
+            require 'PHPMailer/vendor/autoload.php';
+
+            $mail = new PHPMailer(true);
+            try {
+                // Server settings
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'ict@summituniversity.edu.ng';
+                $mail->Password = 'qglevvmueleofwza';
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                $mail->Port = 465;
+
+                // Sender and recipient
+                $mail->setFrom('ict@summituniversity.edu.ng', 'Summit University, Offa');
+                $mail->addAddress($email, $name);
+
+                // Content
+                $mail->isHTML(true);
+                $mail->Subject = 'Summit Senior Grantmanship Training Programme - Payment Confirmation';
+
+                // Set the email body
+                $mail->Body = 'Hello ' . htmlspecialchars($name) . ',<br>
+                Your payment was successful.<br>
+                <br>
+                Your Payment Reference Number is: '.mysqli_real_escape_string($link, $ref).'<br>
+                Amount Paid: '.$amount.'
+                <br>';
+
+                // Send email
+                $mail->send();
+                return 1;
+            } catch (Exception $e) {
+                error_log('Mailer Error: ' . $mail->ErrorInfo);
+                return 2;
+            }
         } else {
             return 0;
         }
@@ -235,12 +292,13 @@ function verify_payment($ref)
 if (isset($_GET['update_payment_status'])) {
     $paymentID = $_GET['reference'];
 
-    $verify_respone = verify_payment($paymentID);
-    if ($verify_respone == 1) {
-        header('location: grantmanship.php?type=success&msg=Payment successful.');
+    $verify_response = verify_payment($paymentID);
+    if ($verify_response == 1) {
+        header('Location: grantmanship.php?type=success&msg=Payment successful.');
     } else {
-        header('location: grantmanship.php?type=error&msg=Payment failed.');
+        header('Location: grantmanship.php?type=error&msg=Payment failed.');
     }
+    exit();
 }
 
 

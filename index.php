@@ -202,7 +202,7 @@
 
                 <div class="clearfix row">
 
-                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <!-- <div class="col-lg-6 col-md-12 col-sm-12 content-column">
 
                         <div class="content-box">
 
@@ -224,41 +224,62 @@
 
                     </div>
 
-                    <!--                      
-
-                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-
-                        <div class="image-box">
-
-                            <figure class="image"><img src="" alt=""></figure>
-
-                        </div>
-
-
-
-
-
-                    </div> -->
-
                     <div class="col-lg-6 col-md-12 col-sm-12 image-column">
 
                         <div class="image_block_2">
 
-                            <!-- <div class="image-box"> -->
-
                             <figure class="image" style="display:flex; justify-content:center;"><img
                                     src="assets/images/resource/about-1.jpg" alt="" width="90%" /></figure>
-
-                            <!-- <div class="text">
-
-                                    <h3>Academic Programmes</h3>
-
-                                </div> -->
-
-                            <!-- </div> -->
-
                         </div>
 
+                    </div> -->
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
+                        style="margin-top:20px; background: rgba(26, 26, 26, 0.7) none repeat scroll 0 0; border-radius:10px;">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="assets/images/events/1.jpeg" alt="First slide"
+                                    style="height: 500px; object-fit:cover; mix-blend-mode:multiply;">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <div class="grid grid-cols-1" style="color:#ffffff">
+                                        <div class="text-center">
+                                            <h1
+                                                class="font-semibold text-white lg:leading-normal leading-normal text-4xl lg:text-5xl mb-3">
+                                                <span style="font-size: 40px; ">Event</span> <br> <span
+                                                    style="color: #0fac49; font-weight:800;">SUMMIT SENIOR GRANTSMANSHIP
+                                                    TRAINING PROGRAMME</span>
+                                            </h1>
+                                            <p class="text-white text-lg max-w-xl mx-auto">Learn to secure grants for
+                                                impactful, innovative, and sustainable projects at our event. Empowering
+                                                change agents.</p>
+                                            <div class="mt-6">
+                                                <a href="about-us.php" class="theme-btn btn-five"> Register </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="..." alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="..." alt="Third slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
 
                 </div>
@@ -841,7 +862,8 @@
                                 </figure>
 
                                 <div class="lower-content">
-                                    <h3><a href="grantmanship.php" class="partner-info">Grantmanship for Innovation, Impact, and Sustainability</a></h3>
+                                    <h3><a href="grantmanship.php" class="partner-info">Grantmanship for Innovation,
+                                            Impact, and Sustainability</a></h3>
                                 </div>
 
                             </div>
@@ -1224,8 +1246,7 @@
         </div>
 
 
-
-
+        
         <!-- gallery end -->
 
 

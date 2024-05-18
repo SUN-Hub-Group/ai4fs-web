@@ -91,7 +91,7 @@ include 'controller/make_payment.php';
                     style="color:#0fac49;">SUMMIT</span> SENIOR GRANTSMANSHIP TRAINING PROGRAMME </h1>
             <p style="font-style:italic; font-family:Arial, Helvetica, sans-serif; color:#000;"> Learn to secure grants
                 for impactful, innovative, and sustainable projects at our event. Empowering change agents.</p>
-        </section><br> 
+        </section><br>
 
         <section class="centred" style="background-color: #ffffff; padding-top: 20px; padding-bottom: 20px;">
             <div class="auto-container">
@@ -110,13 +110,38 @@ include 'controller/make_payment.php';
                     </div>
                 </div>
             </div>
-            <a href="#registration"  class="btn btn-success w-25"> Apply </a>
-        </section>
+            <a href="#registration" class="btn btn-success w-25"> Apply </a>
+        </section><br><br><br>
 
         <!-- End Page Title -->
 
 
         <!-- about-style-nine -->
+        <section class="chooseus-style-three about-page centred" style="background-color: #0fac49;">
+            <div class="auto-container">
+                <!-- <div class="sec-title style-two">
+                    <h5>Meet Our Facilitators</h5>
+                    <h2>Programme Facilitators</h2>
+                    <div class="divider" style="background-image: url(assets/images/icons/divider-1.png);"></div>
+                    <br>
+                </div> --><br>
+                <div class="row align-items-center clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 image-column mt-3">
+                        <div class="image-box">
+                            <iframe
+                                style="border-radius: 10px; border: 4px solid #ffffff; box-shadow: 0px 20px 50px rgba(255, 255, 255, 0.2);"
+                                width="100%" height="515"
+                                src="https://www.youtube.com/embed/gGatHPEr83U?si=xZflv_eFm2heKvmo"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="about-style-nine" style="background-color: #f0f0f0;">
             <div class="auto-container">
                 <div class="row align-items-center clearfix">
@@ -153,6 +178,7 @@ include 'controller/make_payment.php';
                 </div>
             </div>
         </section>
+
 
         <section class="chooseus-style-three about-page centred">
             <div class="auto-container">
@@ -533,38 +559,34 @@ include 'controller/make_payment.php';
                                             required="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Select Purpose
-                                            <br><code> <ul>
-                                                <li>Please choose the payment option that corresponds to your desired level of participation.</li>
-                                                <li>Kindly note that workshop materia and workshop participation is not an option.</li>
-                                            </ul> </code></label>
+                                        <label for="">Payment Breakdown</label><br>
+                                        <ul>
+                                            <li>₦ 150,000 for Accommodation fee</li>
+
+                                            <li>₦ 100,000 for Feeding and Refreshment</li>
+
+                                            <li>₦ 100,000 for Workshop Materials</li>
+
+                                            <li>₦ 150,000 for Workshop Participation Fee</li>
+                                        </ul>
+                                        <hr>
+                                        <label for="">Select Payment</label><br>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="accommodation"
-                                                value="150000">
+                                            <input class="form-check-input" type="radio" name="workshop_payment"
+                                                value="450000">
                                             <label class="form-check-label" for="accommodation" style="color: green;">₦
-                                                150,000 for Accommodation fee </label>
+                                                425,000 for two people in a room </label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="feedingRefreshment"
-                                                value="100000">
+                                            <input class="form-check-input" type="radio" name="workshop_payment"
+                                                value="500000">
                                             <label class="form-check-label" for="feedingRefreshment"
-                                                style="color: green;">₦ 100,000 for Feeding and Refreshment</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="workshopMaterials"
-                                                value="50000">
-                                            <label class="form-check-label" for="workshopMaterials"
-                                                style="color: green;">₦ 50,000 for Workshop Materials</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox"
-                                                name="workshopParticipationFee" value="200000">
-                                            <label class="form-check-label" for="workshopParticipationFee"
-                                                style="color: green;">₦ 200,000 for Workshop Participation Fee</label>
+                                                style="color: green;">₦ 500,000 for one person in a room</label>
                                         </div>
                                     </div>
                                     <div class="form-group message-btn">
-                                        <button type="submit" name="make_payment" class="theme-btn btn-success"> Register Now </button>
+                                        <button type="submit" name="make_payment" class="theme-btn btn-success">
+                                            Register Now </button>
                                     </div>
                                 </form>
                             </div>
@@ -604,9 +626,42 @@ include 'controller/make_payment.php';
         <!-- about-style-nine end -->
 
 
+        <?php
+        if (isset($_GET["type"])) {
+            if ($_GET["type"] == 'success') {
+                $msg = '<b style="color:green;">Congratulation!!!</b><br><br>Your payment is successful';
+                $color = 'green';
+            } else {
+                $msg = '<b style="color:red;">Sorry!!!</b><br><br>Payment failed';
+                $color = 'red';
+            }
+            ?>
+            <!-- modal -->
+            <div class="modal fade" id="statusPayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Payment Status</h5>
+                            <a href="#" onclick="window.location.href='grantmanship.php'; return false;"class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </a>
+                        </div>
+                        <div class="modal-body">
+                            <h4 style="text-align: center;"><?= $msg ?>
+                            </h4>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" onclick="window.location.href='grantmanship.php'; return false;"class="btn btn-success"
+                                data-dismiss="modal">Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-
-
+            <!-- modal end -->
+        <?php }
+        ?>
 
 
 
@@ -676,16 +731,16 @@ include 'controller/make_payment.php';
         crossorigin="anonymous"></script>
 
     <script>
-        function showModal() {
-            var myModal = new bootstrap.Modal(document.getElementById('exampleModalLong'));
-            myModal.show();
-        }
-
-        // Call the function when the page loads
-        window.onload = function () {
-            showModal();
-        };
+        $(document).ready(function () {
+            $("#exampleModalLong").modal('show');
+        });
     </script>
+    <script>
+        $(document).ready(function () {
+            $("#statusPayment").modal('show');
+        });
+    </script>
+
 </body>
 
 </html>
